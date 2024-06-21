@@ -1,0 +1,16 @@
+{
+  "upgrade": true,
+  "color":true,
+  "install": "prompt",
+  "packageManager":"pnpm",
+  "format": [
+    "group"
+  ],
+  "reject": [
+    "vue",
+    "vite",
+    "@types/node",
+    "@dcloudio/uni-*",
+    "@dcloudio/vite-*"
+  ]
+}
