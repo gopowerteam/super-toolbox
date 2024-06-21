@@ -1,8 +1,7 @@
-import { createSSRApp } from 'vue'
-import 'uno.css'
 import * as Pinia from 'pinia'
+import 'uno.css'
+import { createSSRApp } from 'vue'
 import App from './App.vue'
-import 'nutui-uniapp/styles/index.scss'
 
 export function createApp() {
   const app = createSSRApp(App)

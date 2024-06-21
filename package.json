@@ -83,8 +83,9 @@
     "mini-types": "0.1.7",
     "miniprogram-api-typings": "3.12.2",
     "sass": "1.77.6",
-    "typescript": "5.4.5",
+    "typescript": "5.5.2",
     "unocss": "0.61.0",
+    "unocss-applet": "^0.8.2",
     "vite": "5.2.8",
     "vue-tsc": "2.0.21"
   }
