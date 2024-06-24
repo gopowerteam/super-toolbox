@@ -1,32 +1,11 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.json",
-  "compilerOptions": {
-    "ignoreDeprecations": "5.0",
-    "lib": ["esnext", "dom"],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
+  "references": [
+    {
+      "path": "./tsconfig.uniapp.json"
     },
-    "types": [
-      "@dcloudio/types",
-      "miniprogram-api-typings",
-      "mini-types",
-      "@uni-helper/uni-cloud-types",
-      "@uni-helper/uni-app-types",
-      "@uni-helper/vite-plugin-uni-pages/client",
-      "nutui-uniapp/global.d.ts",
-      "@vue-macros/reactivity-transform/macros-global"
-    ],
-    "sourceMap": true
-  },
-  "include": [
-    "**/*.d.ts",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.jsx",
-    "src/**/*.vue"
+    {
+      "path": "./tsconfig.vite.json"
+    }
   ],
-  "vueCompilerOptions": {
-    "plugins": ["@uni-helper/uni-app-types/volar-plugin"]
-  }
+  "files": []
 }

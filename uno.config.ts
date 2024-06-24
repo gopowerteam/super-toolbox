@@ -1,26 +1,43 @@
-import {
-  defineConfig,
-  presetIcons,
-  transformerDirectives,
-  transformerVariantGroup,
-} from 'unocss'
-
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
+import presetIcons from '@unocss/preset-icons'
+import { defineConfig } from 'unocss'
 import { presetUni } from '@uni-helper/unocss-preset-uni'
+
+function importSvgIcons() {
+  return FileSystemIconLoader(
+    './src/assets/svgs',
+    svg => svg.replace(/#fff/, 'currentColor'),
+  )
+}
 
 export default defineConfig({
   presets: [
-    presetUni(),
+    presetUni({
+      attributify: {
+        prefix: 'css:',
+        prefixedOnly: true,
+        nonValuedAttribute: true,
+      },
+    }),
     presetIcons({
-      scale: 1.2,
-      warn: true,
+      prefix: 'icon-',
+      collections: {
+        'park-outline': () => import('@iconify-json/icon-park-outline').then(i => i.icons),
+        'park-solid': () => import('@iconify-json/icon-park-solid').then(i => i.icons),
+        'park': () => import('@iconify-json/icon-park').then(i => i.icons),
+        'svg': importSvgIcons(),
+      },
       extraProperties: {
         'display': 'inline-block',
         'vertical-align': 'middle',
       },
     }),
   ],
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
+  shortcuts: [
+    ['flex-center', 'flex justify-center items-center'],
+  ],
+  safelist: [
+    ...Array.from({ length: 10 }, (_, i) => `space-x-${i + 1}`),
+    ...Array.from({ length: 10 }, (_, i) => `space-y-${i + 1}`),
   ],
 })
