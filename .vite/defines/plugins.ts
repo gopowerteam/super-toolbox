@@ -1,3 +1,5 @@
+import AutoImport from '../plugins/auto-import'
+import ReactivityTransform from '../plugins/reactivity-transform'
 import UniApp from '../plugins/uni-app'
 import UniComponents from '../plugins/uni-components'
 import UniLayouts from '../plugins/uni-layouts'
@@ -14,6 +16,8 @@ export async function defineVitePlugins() {
       UniPages,
       UniLayouts,
       UniApp,
+      AutoImport,
+      ReactivityTransform,
       UnoCSS(),
     ],
   }

@@ -60,6 +60,8 @@
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-4020120240618002",
     "nutui-uniapp": "1.7.10",
     "pinia": "2.1.7",
+    "query-string": "^9.0.0",
+    "unplugin-auto-import": "^0.17.6",
     "vue": "3.4.21"
   },
   "devDependencies": {
@@ -77,6 +79,7 @@
     "@uni-helper/vite-plugin-uni-components": "0.0.9",
     "@uni-helper/vite-plugin-uni-layouts": "0.1.10",
     "@uni-helper/vite-plugin-uni-pages": "0.2.23",
+    "@vue-macros/reactivity-transform": "^0.4.6",
     "@vue/runtime-core": "3.4.29",
     "@vue/tsconfig": "0.5.1",
     "eslint": "9.5.0",

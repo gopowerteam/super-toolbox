@@ -8,8 +8,7 @@
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit",
-    "source.organizeImports": "explicit"
+    "source.fixAll.stylelint": "explicit"
   },
   "eslint.validate": [
     "javascript",
@@ -24,7 +23,7 @@
     "yaml"
   ],
   "stylelint.packageManager": "pnpm",
-  "stylelint.enable": true,
+  "stylelint.enable": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {

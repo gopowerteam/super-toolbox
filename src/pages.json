@@ -2,7 +2,19 @@
   "pages": [
     {
       "path": "pages/index",
-      "type": "home"
+      "type": "home",
+      "layout": "default",
+      "meta": {
+        "authLogin": true
+      }
+    },
+    {
+      "path": "pages/page1/index",
+      "type": "page"
+    },
+    {
+      "path": "pages/page2/index",
+      "type": "page"
     }
   ],
   "globalStyle": {
