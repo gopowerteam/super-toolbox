@@ -57,10 +57,10 @@ importers:
         specifier: 2.1.7
         version: 2.1.7(typescript@5.5.2)(vue@3.4.21(typescript@5.5.2))
       query-string:
-        specifier: ^9.0.0
+        specifier: 9.0.0
         version: 9.0.0
       unplugin-auto-import:
-        specifier: ^0.17.6
+        specifier: 0.17.6
         version: 0.17.6(rollup@4.18.0)
       vue:
         specifier: 3.4.21
@@ -81,21 +81,15 @@ importers:
       '@dcloudio/vite-plugin-uni':
         specifier: 3.0.0-alpha-4020120240618002
         version: 3.0.0-alpha-4020120240618002(postcss@8.4.38)(rollup@4.18.0)(vite@5.2.8(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1))(vue@3.4.21(typescript@5.5.2))
-      '@iconify-json/carbon':
-        specifier: 1.1.36
-        version: 1.1.36
       '@iconify-json/icon-park':
-        specifier: ^1.1.13
+        specifier: 1.1.13
         version: 1.1.13
       '@iconify-json/icon-park-outline':
-        specifier: ^1.1.15
+        specifier: 1.1.15
         version: 1.1.15
       '@iconify-json/icon-park-solid':
-        specifier: ^1.1.14
+        specifier: 1.1.14
         version: 1.1.14
-      '@iconify/utils':
-        specifier: ^2.1.25
-        version: 2.1.25
       '@types/node':
         specifier: 20.14.6
         version: 20.14.6
@@ -118,14 +112,11 @@ importers:
         specifier: 0.2.23
         version: 0.2.23(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)
       '@unocss/preset-icons':
-        specifier: ^0.61.0
+        specifier: 0.61.0
         version: 0.61.0
       '@vue-macros/reactivity-transform':
-        specifier: ^0.4.6
+        specifier: 0.4.6
         version: 0.4.6(rollup@4.18.0)(vue@3.4.21(typescript@5.5.2))
-      '@vue/runtime-core':
-        specifier: 3.4.29
-        version: 3.4.29
       '@vue/tsconfig':
         specifier: 0.5.1
         version: 0.5.1
@@ -148,7 +139,7 @@ importers:
         specifier: 0.61.0
         version: 0.61.0(postcss@8.4.38)(rollup@4.18.0)(vite@5.2.8(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1))
       unocss-applet:
-        specifier: ^0.8.2
+        specifier: 0.8.2
         version: 0.8.2(@unocss/core@0.61.0)(@unocss/preset-mini@0.61.0)(@unocss/preset-uno@0.61.0)(magic-string@0.30.10)(unocss@0.61.0(postcss@8.4.38)(rollup@4.18.0)(vite@5.2.8(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1)))
       vite:
         specifier: 5.2.8
@@ -1123,9 +1114,6 @@ packages:
     resolution: {integrity: sha512-d2CGZR2o7fS6sWB7DG/3a95bGKQyHMACZ5aW8qGkkqQpUoZV6C0X7Pc7l4ZNMZkfNBf4VWNe9E1jRsf0G146Ew==}
     engines: {node: '>=18.18'}
 
-  '@iconify-json/carbon@1.1.36':
-    resolution: {integrity: sha512-NC3VcqLtwLZpi7+LeXj+99/byv+asrnCQxiDNCZV6hKr9WcNh6C25kJguJYfN+dV54kOkw78e+6PitQi2Bppnw==}
-
   '@iconify-json/icon-park-outline@1.1.15':
     resolution: {integrity: sha512-jQbk/ETARyYPjX6HolkdjSLJHsNCfSBfYUqcUQLXYK/1tfuVnQsUdWG2IM2a7VBpxJtrK7r4n1iwPOFaZ5T46g==}
 
@@ -1473,46 +1461,55 @@ packages:
     resolution: {integrity: sha512-C/zbRYRXFjWvz9Z4haRxcTdnkPt1BtCkz+7RtBSuNmKzMzp3ZxdM28Mpccn6pt28/UWUCTXa+b0Mx1k3g6NOMA==}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.18.0':
     resolution: {integrity: sha512-l3m9ewPgjQSXrUMHg93vt0hYCGnrMOcUpTz6FLtbwljo2HluS4zTXFy2571YQbisTnfTKPZ01u/ukJdQTLGh9A==}
     cpu: [arm]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.18.0':
     resolution: {integrity: sha512-rJ5D47d8WD7J+7STKdCUAgmQk49xuFrRi9pZkWoRD1UeSMakbcepWXPF8ycChBoAqs1pb2wzvbY6Q33WmN2ftw==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.18.0':
     resolution: {integrity: sha512-be6Yx37b24ZwxQ+wOQXXLZqpq4jTckJhtGlWGZs68TgdKXJgw54lUUoFYrg6Zs/kjzAQwEwYbp8JxZVzZLRepQ==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-powerpc64le-gnu@4.18.0':
     resolution: {integrity: sha512-hNVMQK+qrA9Todu9+wqrXOHxFiD5YmdEi3paj6vP02Kx1hjd2LLYR2eaN7DsEshg09+9uzWi2W18MJDlG0cxJA==}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.18.0':
     resolution: {integrity: sha512-ROCM7i+m1NfdrsmvwSzoxp9HFtmKGHEqu5NNDiZWQtXLA8S5HBCkVvKAxJ8U+CVctHwV2Gb5VUaK7UAkzhDjlg==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-s390x-gnu@4.18.0':
     resolution: {integrity: sha512-0UyyRHyDN42QL+NbqevXIIUnKA47A+45WyasO+y2bGJ1mhQrfrtXUpTxCOrfxCR4esV3/RLYyucGVPiUsO8xjg==}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.18.0':
     resolution: {integrity: sha512-xuglR2rBVHA5UsI8h8UbX4VJ470PtGCf5Vpswh7p2ukaqBGFTnsfzxUBetoWBWymHMxbIG0Cmx7Y9qDZzr648w==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.18.0':
     resolution: {integrity: sha512-LKaqQL9osY/ir2geuLVvRRs+utWUNilzdE90TpyoX0eNqPzWjRm14oMEE+YLve4k/NAqCdPkGYDaDF5Sw+xBfg==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-win32-arm64-msvc@4.18.0':
     resolution: {integrity: sha512-7J6TkZQFGo9qBKH0pk2cEVSRhJbL6MtfWxth7Y5YmZs57Pi+4x6c2dStAUvaQkHQLnEQv1jzBUW43GvZW8OFqA==}
@@ -1942,17 +1939,11 @@ packages:
   '@vue/reactivity@3.4.21':
     resolution: {integrity: sha512-UhenImdc0L0/4ahGCyEzc/pZNwVgcglGy9HVzJ1Bq2Mm9qXOpP8RyNTjookw/gOCUlXSEtuZ2fUg5nrHcoqJcw==}
 
-  '@vue/reactivity@3.4.29':
-    resolution: {integrity: sha512-w8+KV+mb1a8ornnGQitnMdLfE0kXmteaxLdccm2XwdFxXst4q/Z7SEboCV5SqJNpZbKFeaRBBJBhW24aJyGINg==}
-
   '@vue/reactivity@3.4.30':
     resolution: {integrity: sha512-bVJurnCe3LS0JII8PPoAA63Zd2MBzcKrEzwdQl92eHCcxtIbxD2fhNwJpa+KkM3Y/A4T5FUnmdhgKwOf6BfbcA==}
 
   '@vue/runtime-core@3.4.21':
     resolution: {integrity: sha512-pQthsuYzE1XcGZznTKn73G0s14eCJcjaLvp3/DKeYWoFacD9glJoqlNBxt3W2c5S40t6CCcpPf+jG01N3ULyrA==}
-
-  '@vue/runtime-core@3.4.29':
-    resolution: {integrity: sha512-s8fmX3YVR/Rk5ig0ic0NuzTNjK2M7iLuVSZyMmCzN/+Mjuqqif1JasCtEtmtoJWF32pAtUjyuT2ljNKNLeOmnQ==}
 
   '@vue/runtime-core@3.4.30':
     resolution: {integrity: sha512-qaFEbnNpGz+tlnkaualomogzN8vBLkgzK55uuWjYXbYn039eOBZrWxyXWq/7qh9Bz2FPifZqGjVDl/FXiq9L2g==}
@@ -1975,9 +1966,6 @@ packages:
 
   '@vue/shared@3.4.21':
     resolution: {integrity: sha512-PuJe7vDIi6VYSinuEbUIQgMIRZGgM8e4R+G+/dQTk0X1NEdvgvvgv7m+rfmDH1gZzyA1OjjoWskvHlfRNfQf3g==}
-
-  '@vue/shared@3.4.29':
-    resolution: {integrity: sha512-hQ2gAQcBO/CDpC82DCrinJNgOHI2v+FA7BDW4lMSPeBpQ7sRe2OLHWe5cph1s7D8DUQAwRt18dBDfJJ220APEA==}
 
   '@vue/shared@3.4.30':
     resolution: {integrity: sha512-CLg+f8RQCHQnKvuHY9adMsMaQOcqclh6Z5V9TaoMgy0ut0tz848joZ7/CYFFyF/yZ5i2yaw7Fn498C+CNZVHIg==}
@@ -6436,10 +6424,6 @@ snapshots:
 
   '@humanwhocodes/retry@0.3.0': {}
 
-  '@iconify-json/carbon@1.1.36':
-    dependencies:
-      '@iconify/types': 2.0.0
-
   '@iconify-json/icon-park-outline@1.1.15':
     dependencies:
       '@iconify/types': 2.0.0
@@ -7683,10 +7667,6 @@ snapshots:
     dependencies:
       '@vue/shared': 3.4.21
 
-  '@vue/reactivity@3.4.29':
-    dependencies:
-      '@vue/shared': 3.4.29
-
   '@vue/reactivity@3.4.30':
     dependencies:
       '@vue/shared': 3.4.30
@@ -7695,11 +7675,6 @@ snapshots:
     dependencies:
       '@vue/reactivity': 3.4.21
       '@vue/shared': 3.4.21
-
-  '@vue/runtime-core@3.4.29':
-    dependencies:
-      '@vue/reactivity': 3.4.29
-      '@vue/shared': 3.4.29
 
   '@vue/runtime-core@3.4.30':
     dependencies:
@@ -7732,8 +7707,6 @@ snapshots:
       vue: 3.4.21(typescript@5.5.2)
 
   '@vue/shared@3.4.21': {}
-
-  '@vue/shared@3.4.29': {}
 
   '@vue/shared@3.4.30': {}
 

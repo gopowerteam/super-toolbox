@@ -1,19 +1,14 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.json",
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
-    "composite": true,
-    "lib": [
-      "ESNext",
-      "Dom"
-    ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"]
     },
     "types": [
       "vite/client",
-      "mini-types",
       "@dcloudio/types",
+      "mini-types",
       "miniprogram-api-typings",
       "@uni-helper/uni-app-types",
       "@uni-helper/vite-plugin-uni-pages/client",
