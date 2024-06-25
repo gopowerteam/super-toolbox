@@ -61,6 +61,7 @@
     "nutui-uniapp": "1.7.10",
     "pinia": "2.1.7",
     "query-string": "9.0.0",
+    "radash": "^12.1.0",
     "unplugin-auto-import": "0.17.6",
     "vue": "3.4.21"
   },
