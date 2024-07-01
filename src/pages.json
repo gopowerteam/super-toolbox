@@ -4,9 +4,7 @@
       "path": "pages/index",
       "type": "home",
       "layout": "default",
-      "meta": {
-        "authLogin": true
-      }
+      "meta": {}
     },
     {
       "path": "pages/page1/index",
@@ -22,10 +20,9 @@
     "backgroundColorBottom": "@bgColorBottom",
     "backgroundColorTop": "@bgColorTop",
     "backgroundTextStyle": "@bgTxtStyle",
-    "navigationBarBackgroundColor": "#000000",
+    "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
-    "navigationBarTitleText": "Uni Creator",
-    "navigationStyle": "custom"
+    "navigationStyle": "default"
   },
   "subPackages": []
 }

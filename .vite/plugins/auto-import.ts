@@ -9,6 +9,11 @@ export default autoImport({
       '@/router': ['useRouter'],
       '@/store': ['useStore'],
     },
+    {
+      'nutui-uniapp/composables': [
+        'useToast',
+      ],
+    },
   ],
   dirs: [
     'src/composables/define/**',

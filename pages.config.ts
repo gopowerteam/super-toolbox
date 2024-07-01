@@ -1,4 +1,5 @@
 import { defineUniPages } from '@uni-helper/vite-plugin-uni-pages'
+import { isH5 } from '@uni-helper/uni-env'
 
 export default defineUniPages({
   pages: [],
@@ -7,10 +8,10 @@ export default defineUniPages({
     backgroundColorBottom: '@bgColorBottom',
     backgroundColorTop: '@bgColorTop',
     backgroundTextStyle: '@bgTxtStyle',
-    navigationBarBackgroundColor: '#000000',
+    navigationBarBackgroundColor: '@navBgColor',
     navigationBarTextStyle: '@navTxtStyle',
-    navigationBarTitleText: 'Uni Creator',
-    navigationStyle: 'custom',
+    // navigationBarTitleText: 'Uni Creator',
+    navigationStyle: isH5 ? 'custom' : 'default',
   },
   subPackages: [],
 })
