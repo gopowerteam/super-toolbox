@@ -42,6 +42,9 @@
     }
   },
   "h5": {
+    "router": {
+      "mode": "history"
+    },
     "darkmode": true,
     "themeLocation": "theme.json"
   },

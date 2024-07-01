@@ -64,6 +64,9 @@
     "watch": true,
     "watchEffect": true,
     "watchPostEffect": true,
-    "watchSyncEffect": true
+    "watchSyncEffect": true,
+    "onPageLoad": true,
+    "useToast": true,
+    "onPageReady": true
   }
 }

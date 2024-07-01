@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { onLaunch } from '@dcloudio/uni-app'
+import { bootstrap } from './bootstrap'
 
-onLaunch(() => {})
+onLaunch(() => {
+  bootstrap()
+})
 </script>
 
 <style lang="scss">

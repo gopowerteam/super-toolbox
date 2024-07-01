@@ -58,6 +58,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-4020120240618002",
     "@dcloudio/uni-mp-xhs": "3.0.0-alpha-4020120240618002",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-4020120240618002",
+    "dayjs": "^1.11.11",
     "nutui-uniapp": "1.7.10",
     "pinia": "2.1.7",
     "query-string": "9.0.0",

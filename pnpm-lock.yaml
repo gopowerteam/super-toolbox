@@ -50,6 +50,9 @@ importers:
       '@dcloudio/uni-quickapp-webview':
         specifier: 3.0.0-alpha-4020120240618002
         version: 3.0.0-alpha-4020120240618002(postcss@8.4.38)(rollup@4.18.0)(vue@3.4.21(typescript@5.5.2))
+      dayjs:
+        specifier: ^1.11.11
+        version: 1.11.11
       nutui-uniapp:
         specifier: 1.7.10
         version: 1.7.10(@uni-helper/uni-app-types@0.5.13(typescript@5.5.2))(vue@3.4.21(typescript@5.5.2))
@@ -2417,6 +2420,9 @@ packages:
   data-urls@2.0.0:
     resolution: {integrity: sha512-X5eWTSXO/BJmpdIKCRuKUgSCgAN0OwliVK3yPKbwIWU1Tdw5BRajxlzMidvh+gwko9AfQ9zIj52pzF91Q3YAvQ==}
     engines: {node: '>=10'}
+
+  dayjs@1.11.11:
+    resolution: {integrity: sha512-okzr3f11N6WuqYtZSvm+F776mB41wRZMhKP+hc34YdW+KmtYYK9iqvHSwo2k9FEH3fhGXvOPV6yz2IcSrfRUDg==}
 
   de-indent@1.0.2:
     resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}
@@ -8167,6 +8173,8 @@ snapshots:
       abab: 2.0.6
       whatwg-mimetype: 2.3.0
       whatwg-url: 8.7.0
+
+  dayjs@1.11.11: {}
 
   de-indent@1.0.2: {}
 
