@@ -41,8 +41,6 @@ const containerClass = computed(() => {
 
 <template>
   <view class="page-container" :style="containerStyle" :class="containerClass">
-    <div>123</div>
-    {{ appendClass }}
     <slot />
   </view>
 </template>
