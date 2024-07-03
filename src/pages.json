@@ -23,6 +23,18 @@
     {
       "path": "pages/page2/index",
       "type": "page"
+    },
+    {
+      "path": "pages/shulte/index",
+      "type": "page",
+      "layout": "default",
+      "meta": {}
+    },
+    {
+      "path": "pages/shulte/questions",
+      "type": "page",
+      "layout": "default",
+      "meta": {}
     }
   ],
   "globalStyle": {
@@ -32,7 +44,7 @@
     "backgroundTextStyle": "@bgTxtStyle",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
-    "navigationStyle": "custom"
+    "navigationStyle": "default"
   },
   "subPackages": []
 }

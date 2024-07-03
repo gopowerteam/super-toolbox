@@ -15,3 +15,9 @@ export enum CalculationMode {
   Select = 'select',
   Input = 'input',
 }
+
+export enum ShulteMode {
+  Positive = 'positive',
+  Reverse = 'reverse',
+  Random = 'random',
+}

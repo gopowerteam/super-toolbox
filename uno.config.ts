@@ -37,6 +37,10 @@ export default defineConfig({
     ['flex-center', 'flex justify-center items-center'],
   ],
   safelist: [
+    ...[
+      'icon-svg:calculation',
+      'icon-svg:shulte',
+    ],
     ...Array.from({ length: 10 }, (_, i) => `space-x-${i + 1}`),
     ...Array.from({ length: 10 }, (_, i) => `space-y-${i + 1}`),
   ],
