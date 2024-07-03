@@ -22,3 +22,4 @@ dist
 
 types/generated/*
 .eslintrc-auto-import.json
+pages.json
