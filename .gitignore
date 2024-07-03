@@ -21,3 +21,4 @@ dist
 *.sw?
 
 types/generated/*
+.eslintrc-auto-import.json
