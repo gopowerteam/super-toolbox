@@ -1,38 +1,19 @@
-import { onLoad, onShow } from '@dcloudio/uni-app'
+import { CalculationMode, CalculationRange, CalculationType } from './enum.config'
 
-interface PageLoadConfig {
-  load: (...params: (AnyObject | undefined)[]) => void
-  show?: (...params: (AnyObject | undefined)[]) => void
-}
+export const CalculationTypeDict = new Map([
+  [CalculationType.Add, '加法'],
+  [CalculationType.Subtract, '减法'],
+  [CalculationType.Multiply, '乘法'],
+  [CalculationType.Divide, '除法'],
+])
 
-export function onPageLoad(config: PageLoadConfig): void
-export function onPageLoad(config: (...params: (AnyObject | undefined)[]) => void): void
-export function onPageLoad(config: ((...params: (AnyObject | undefined)[]) => void) | PageLoadConfig) {
-  const store = useStore()
+export const CalculationRangeDict = new Map([
+  [CalculationRange.Ten, '10以内'],
+  [CalculationRange.Hundred, '100以内'],
+  [CalculationRange.Thousand, '1000以内'],
+])
 
-  let pageInitialize = false
-
-  const loadCallback = typeof config === 'function' ? config : config?.load
-  const showCallback = typeof config === 'object' ? config?.show : undefined
-
-  const execPageLoad = (params?: AnyObject) =>
-    store.app.ready ? (loadCallback(params), true) : false
-
-  onLoad((params) => {
-    if (execPageLoad(params) === false) {
-      const unsubscribe = store.$subscribe(() => {
-        execPageLoad(params) && unsubscribe()
-      })
-    }
-
-    if (showCallback) {
-      onShow(() => {
-        if (pageInitialize) {
-          showCallback(params)
-        }
-
-        pageInitialize = true
-      })
-    }
-  })
-}
+export const CalculationModeDict = new Map([
+  [CalculationMode.Select, '选择'],
+  [CalculationMode.Input, '输入'],
+])

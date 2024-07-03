@@ -1,0 +1,38 @@
+{
+  "pages": [
+    {
+      "path": "pages/index",
+      "type": "home",
+      "layout": "default",
+      "meta": {}
+    },
+    {
+      "path": "pages/calculation-practise/index",
+      "type": "page",
+      "layout": "default",
+      "meta": {}
+    },
+    {
+      "path": "pages/calculation-practise/questions",
+      "type": "page"
+    },
+    {
+      "path": "pages/page1/index",
+      "type": "page"
+    },
+    {
+      "path": "pages/page2/index",
+      "type": "page"
+    }
+  ],
+  "globalStyle": {
+    "backgroundColor": "@bgColor",
+    "backgroundColorBottom": "@bgColorBottom",
+    "backgroundColorTop": "@bgColorTop",
+    "backgroundTextStyle": "@bgTxtStyle",
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "navigationStyle": "custom"
+  },
+  "subPackages": []
+}
