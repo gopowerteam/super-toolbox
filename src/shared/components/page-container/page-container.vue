@@ -44,7 +44,9 @@ const containerClass = computed(() => {
   <view class="page-container" :style="containerStyle" :class="containerClass">
     <slot />
   </view>
+  <!-- #ifdef MP-WEIXIN -->
   <PagePrivacy />
+  <!-- #endif -->
 </template>
 
 <style scoped>
