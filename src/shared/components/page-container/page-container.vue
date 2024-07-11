@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
+import PagePrivacy from './components/page-privacy.vue'
 
 const props = withDefaults(defineProps<{
   padding?: boolean | string
@@ -43,6 +44,7 @@ const containerClass = computed(() => {
   <view class="page-container" :style="containerStyle" :class="containerClass">
     <slot />
   </view>
+  <PagePrivacy />
 </template>
 
 <style scoped>
