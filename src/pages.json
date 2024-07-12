@@ -7,6 +7,16 @@
       "meta": {}
     },
     {
+      "path": "pages/calculation-export/index",
+      "type": "page",
+      "layout": "default",
+      "meta": {}
+    },
+    {
+      "path": "pages/calculation-export/questions",
+      "type": "page"
+    },
+    {
       "path": "pages/calculation-practise/index",
       "type": "page",
       "layout": "default",
@@ -44,7 +54,7 @@
     "backgroundTextStyle": "@bgTxtStyle",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
-    "navigationStyle": "default"
+    "navigationStyle": "custom"
   },
   "subPackages": []
 }

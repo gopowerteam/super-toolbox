@@ -6,6 +6,11 @@ const appList = [{
   backgroundColor: '#3ABEF9',
   url: '/pages/calculation-practise/index',
 }, {
+  title: '口算试卷',
+  icon: 'icon-svg:calculation',
+  backgroundColor: '#3ABEF9',
+  url: '/pages/calculation-export/index',
+}, {
   title: '舒尔特方格',
   icon: 'icon-svg:shulte',
   backgroundColor: '#10aec2',

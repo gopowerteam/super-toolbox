@@ -58,6 +58,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-4020120240618002",
     "@dcloudio/uni-mp-xhs": "3.0.0-alpha-4020120240618002",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-4020120240618002",
+    "@leafer-draw/miniapp": "^1.0.0",
     "@vueuse/core": "9.13.0",
     "dayjs": "1.11.11",
     "nutui-uniapp": "1.7.10",
