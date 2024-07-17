@@ -21,3 +21,10 @@ export enum ShulteMode {
   Reverse = 'reverse',
   Random = 'random',
 }
+
+export enum Direction {
+  Up = 'up',
+  Down = 'down',
+  Left = 'left',
+  Right = 'right',
+}

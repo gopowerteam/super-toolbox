@@ -1,0 +1,40 @@
+name: release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  push_to_registry:
+    name: push docker image to hub
+    runs-on: ubuntu-latest
+    steps:
+      - name: check repository
+        uses: actions/checkout@v4
+
+      - name: Get package info
+        id: package
+        uses: codex-team/action-nodejs-package-info@v1.1
+  
+      - name: login to docker registry
+        uses: docker/login-action@v3
+        with:
+          username: ${{secrets.DOCKERHUB_USERNAME}}
+          password: ${{secrets.DOCKERHUB_TOKEN}}
+
+      - name: build and push docker image to registry
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/${{steps.package.outputs.name}}:latest
+         
+      - name: webhook
+        run: |
+          curl -X GET \ 
+          -H "Content-Type: application/json" \
+          -H "Container: ${{steps.package.outputs.name}}" \
+          -H "Authorization: ${{secrets.PANEL_TOKEN}}" \
+          "${{secrets.PANEL_WEBHOOK}}"
+      

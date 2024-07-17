@@ -15,6 +15,11 @@ const appList = [{
   icon: 'icon-svg:shulte',
   backgroundColor: '#10aec2',
   url: '/pages/shulte/index',
+}, {
+  title: '贪吃蛇',
+  icon: 'icon-svg:snake',
+  backgroundColor: '#10aec2',
+  url: '/pages/snake/index',
 }]
 </script>
 

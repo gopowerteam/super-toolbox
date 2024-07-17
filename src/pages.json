@@ -45,6 +45,16 @@
       "type": "page",
       "layout": "default",
       "meta": {}
+    },
+    {
+      "path": "pages/snake/game",
+      "type": "page"
+    },
+    {
+      "path": "pages/snake/index",
+      "type": "page",
+      "layout": "default",
+      "meta": {}
     }
   ],
   "globalStyle": {
@@ -54,7 +64,7 @@
     "backgroundTextStyle": "@bgTxtStyle",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
-    "navigationStyle": "custom"
+    "navigationStyle": "default"
   },
   "subPackages": []
 }
