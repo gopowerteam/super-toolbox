@@ -32,7 +32,7 @@ jobs:
          
       - name: webhook
         run: |
-          curl -X GET \ 
+          curl -X GET \
           -H "Content-Type: application/json" \
           -H "Container: ${{steps.package.outputs.name}}" \
           -H "Authorization: ${{secrets.PANEL_TOKEN}}" \
