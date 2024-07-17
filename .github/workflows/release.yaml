@@ -36,5 +36,5 @@ jobs:
           -H "Content-Type: application/json" \
           -H "Container: ${{steps.package.outputs.name}}" \
           -H "Authorization: ${{secrets.PANEL_TOKEN}}" \
-          "${{secrets.PANEL_WEBHOOK}}"
+          ${{secrets.PANEL_WEBHOOK}}
       
