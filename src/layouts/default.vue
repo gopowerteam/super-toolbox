@@ -1,10 +1,20 @@
 <script setup lang="ts">
+const envResult = $(useEnv())
 </script>
 
 <template>
-  <main>
-    <slot />
-  </main>
+  <view v-if="envResult.platform.isWeb">
+    <template v-if="!envResult.device.isMobile">
+      <view class="flex-center fixed inset-0 bg-#999">
+        <view class="w-750rpx h-1623rpx bg-#fff">
+          <slot />
+        </view>
+      </view>
+    </template>
+    <template v-else>
+      <slot />
+    </template>
+  </view>
 </template>
 
 <style scoped>
