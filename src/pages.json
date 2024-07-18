@@ -55,6 +55,15 @@
       "type": "page",
       "layout": "default",
       "meta": {}
+    },
+    {
+      "path": "pages/timer/index",
+      "type": "page",
+      "layout": "default",
+      "meta": {},
+      "style": {
+        "navigationStyle": "custom"
+      }
     }
   ],
   "globalStyle": {

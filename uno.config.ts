@@ -40,6 +40,8 @@ export default defineConfig({
     ...[
       'icon-svg:calculation',
       'icon-svg:shulte',
+      'icon-svg:snake',
+      'icon-svg:time',
     ],
     ...Array.from({ length: 10 }, (_, i) => `space-x-${i + 1}`),
     ...Array.from({ length: 10 }, (_, i) => `space-y-${i + 1}`),

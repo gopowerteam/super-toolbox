@@ -15,6 +15,9 @@ const envResult = $(useEnv())
       <slot />
     </template>
   </view>
+  <view v-else>
+    <slot />
+  </view>
 </template>
 
 <style scoped>

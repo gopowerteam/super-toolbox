@@ -20,6 +20,11 @@ const appList = [{
   icon: 'icon-svg:snake',
   backgroundColor: '#10aec2',
   url: '/pages/snake/index',
+}, {
+  title: '时钟',
+  icon: 'icon-svg:time',
+  backgroundColor: '#10aec2',
+  url: '/pages/timer/index',
 }]
 </script>
 
