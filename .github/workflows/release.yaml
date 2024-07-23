@@ -29,6 +29,8 @@ jobs:
           context: .
           push: true
           tags: ${{secrets.DOCKERHUB_USERNAME}}/${{steps.package.outputs.name}}:latest
+          build-args: |
+            GATEWAY=${{secrets.VITE_HTTP_GATEWAY}}
          
       - name: webhook
         run: |

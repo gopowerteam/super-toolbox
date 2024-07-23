@@ -4,6 +4,9 @@ FROM alpine:3.20 as base
 ENV NODE_VERSION=20.13.0
 ENV PNPM_VERSION=9.5.0
 ENV APP_PATH=/app
+
+ARG GATEWAY
+ENV VITE_HTTP_GATEWAY = ${GATEWAY}
 # -设置工作目录
 WORKDIR $APP_PATH
 # 安装基础包
@@ -12,6 +15,8 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && npm install -g pnpm@$PNPM_VERSION --registry=https://registry.npmmirror.com \
     && node --version \
     && pnpm --version
+
+
 
 # STEP2: 构建依赖镜像
 FROM base as install
