@@ -6,11 +6,12 @@ import type { Poetry } from '@/http/models/Poetry'
 const poetryService = new PoetryService()
 
 const router = useRouter()
-let visible = $ref<boolean>(false)
 let poetry = $ref<Poetry>()
 let content = $ref<{ text: string, pinyin?: string, symbol: boolean }[][]>([])
 let scrollViewId = $ref<string>()
 let showAnimate = $ref(true)
+let showMenu = $ref<boolean>(false)
+let showPinyin = $ref(true)
 
 function generateContent() {
   if (!poetry) {
@@ -44,8 +45,12 @@ function generateContent() {
   content = sentences
 }
 
+function onTogglePinyin() {
+  showMenu = false
+  showPinyin = !showPinyin
+}
 function onBack() {
-  visible = false
+  showMenu = false
   router.back()
 }
 
@@ -63,7 +68,7 @@ function onNext() {
     })
   })
 
-  visible = false
+  showMenu = false
 }
 
 function requestTodayPoetry() {
@@ -101,7 +106,7 @@ onPageLoad(() => {
             <view class="content space-y-30rpx text-32rpx">
               <view v-for="(sentence, sentenceIndex) in content" :key="sentenceIndex" class="flex items-end justify-center sentence flex-wrap">
                 <view v-for="(word, sectionIndex) in sentence" :key="sectionIndex" :class="{ word: !word.symbol, symbol: word.symbol }">
-                  <view v-if="word.pinyin" class="text-#666 text-20rpx">
+                  <view v-if="word.pinyin && showPinyin" class="text-#666 text-20rpx">
                     {{ word?.pinyin }}
                   </view>
                   <view class="text-42rpx">
@@ -115,20 +120,30 @@ onPageLoad(() => {
       </view>
     </NutAnimate>
   </view>
-  <NutFixedNav v-model:visible="visible" un-active-text="更多" active-text="收起" :style="{ position: 'absolute', width: '100rpx' }" type="right" :position="{ bottom: '50rpx' }">
+  <NutFixedNav v-model:visible="showMenu" un-active-text="更多" active-text="收起" :style="{ position: 'absolute', width: '100rpx' }" type="right" :position="{ bottom: '50rpx' }">
     <template #list>
       <ul class="nut-fixed-nav__list">
         <li class="nut-fixed-nav__list-item">
-          <view class="flex flex-col flex-center space-y-1" @click="onNext">
-            <i class="icon-park-outline:refresh text-#333 text-24rpx" />
+          <view class="text-center space-y-1" @click="onNext">
+            <view class="icon-park-outline:refresh text-#333 text-24rpx" />
             <view class="text-24rpx text-#333">
               换一首
             </view>
           </view>
         </li>
         <li class="nut-fixed-nav__list-item">
-          <view class="flex flex-col flex-center space-y-1" @click="onBack">
-            <i class="icon-park-outline:back text-#333 text-24rpx" />
+          <view class="text-center space-y-1" @click="onTogglePinyin">
+            <text class="text-22rpx text-center italic" :class="showPinyin ? 'text-#333' : 'text-#999'">
+              {{ showPinyin ? '开' : '关' }}<view />
+            </text>
+            <view class="text-24rpx text-#333">
+              拼音
+            </view>
+          </view>
+        </li>
+        <li class="nut-fixed-nav__list-item">
+          <view class="text-center space-y-1" @click="onBack">
+            <view class="icon-park-outline:back text-#333 text-24rpx" />
             <view class="text-24rpx text-#333">
               返回
             </view>
