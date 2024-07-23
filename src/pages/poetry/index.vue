@@ -76,10 +76,11 @@ onPageLoad(() => {
   <view>
     <NutAnimate type="slide-top" :show="poetry && content?.length !== 0">
       <view v-if="poetry && content?.length" class="absolute inset-0 flex-center">
-        <scroll-view scroll-with-animation scroll-y :scroll-into-view="scrollViewId" class="text-center poetry-container">
-          <view class="space-y-60rpx">
+        <scroll-view scroll-with-animation scroll-y :scroll-into-view="scrollViewId" class="text-center absolute inset-0">
+          <text :id="`poetry-${poetry.id}`" />
+          <view class="space-y-60rpx poetry-container">
             <view class="space-y-20rpx">
-              <view :id="`poetry-${poetry.id}`" class="title text-56rpx">
+              <view class="title text-56rpx">
                 {{ poetry.title }}
               </view>
               <view class="author text-28rpx">
@@ -97,9 +98,6 @@ onPageLoad(() => {
                     {{ word?.text }}
                   </view>
                 </view>
-              </view>
-              <view v-for="i in 1000" :key="i">
-                123
               </view>
             </view>
           </view>
@@ -148,11 +146,13 @@ onPageLoad(() => {
 }
 
 .poetry-container{
-  max-height: 100%;
-  overflow: auto;
-  padding: 100px 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100rpx 0;
   box-sizing: border-box;
-  max-width: 100%;
 }
 </style>
 
