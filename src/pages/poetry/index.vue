@@ -5,10 +5,12 @@ import type { Poetry } from '@/http/models/Poetry'
 
 const poetryService = new PoetryService()
 
+const router = useRouter()
 let visible = $ref<boolean>(false)
 let poetry = $ref<Poetry>()
 let content = $ref<{ text: string, pinyin?: string, symbol: boolean }[][]>([])
 let scrollViewId = $ref<string>()
+let showAnimate = $ref(false)
 
 function generateContent() {
   if (!poetry) {
@@ -42,13 +44,20 @@ function generateContent() {
   content = sentences
 }
 
+function onBack() {
+  visible = false
+  router.back()
+}
+
 function onNext() {
+  showAnimate = false
   poetryService.random().then((data) => {
     poetry = data
     generateContent()
 
     scrollViewId = ''
     nextTick(() => {
+      showAnimate = true
       scrollViewId = `poetry-${data.id}`
     })
   })
@@ -60,13 +69,14 @@ function requestTodayPoetry() {
   poetryService.today().then((data) => {
     poetry = data
     generateContent()
-
+    showAnimate = true
     scrollViewId = ''
     nextTick(() => {
       scrollViewId = `poetry-${data.id}`
     })
   })
 }
+
 onPageLoad(() => {
   requestTodayPoetry()
 })
@@ -74,13 +84,13 @@ onPageLoad(() => {
 
 <template>
   <view>
-    <NutAnimate type="slide-top" :show="poetry && content?.length !== 0">
+    <NutAnimate type="slide-left" :show="showAnimate">
       <view v-if="poetry && content?.length" class="absolute inset-0 flex-center">
         <scroll-view scroll-with-animation scroll-y :scroll-into-view="scrollViewId" class="text-center absolute inset-0">
           <text :id="`poetry-${poetry.id}`" />
           <view class="space-y-60rpx poetry-container">
             <view class="space-y-20rpx">
-              <view class="title text-56rpx">
+              <view class="title text-50rpx px-40rpx tracking-widest">
                 {{ poetry.title }}
               </view>
               <view class="author text-28rpx">
@@ -89,9 +99,9 @@ onPageLoad(() => {
               </view>
             </view>
             <view class="content space-y-30rpx text-32rpx">
-              <view v-for="(sentence, sentenceIndex) in content" :key="sentenceIndex" class="flex items-end justify-center sentence">
+              <view v-for="(sentence, sentenceIndex) in content" :key="sentenceIndex" class="flex items-end justify-center sentence flex-wrap">
                 <view v-for="(word, sectionIndex) in sentence" :key="sectionIndex" :class="{ word: !word.symbol, symbol: word.symbol }">
-                  <view v-if="word.pinyin" class="text-#333">
+                  <view v-if="word.pinyin" class="text-#666 text-20rpx">
                     {{ word?.pinyin }}
                   </view>
                   <view class="text-42rpx">
@@ -113,6 +123,14 @@ onPageLoad(() => {
             <i class="icon-park-outline:refresh text-#333 text-24rpx" />
             <view class="text-24rpx text-#333">
               换一首
+            </view>
+          </view>
+        </li>
+        <li class="nut-fixed-nav__list-item">
+          <view class="flex flex-col flex-center space-y-1" @click="onBack">
+            <i class="icon-park-outline:back text-#333 text-24rpx" />
+            <view class="text-24rpx text-#333">
+              返回
             </view>
           </view>
         </li>
@@ -138,10 +156,10 @@ onPageLoad(() => {
 
 .sentence{
   .word{
-    width: 80rpx;
+    width: 65rpx;
   }
   .symbol{
-    width: 20rpx;
+    width: 10rpx;
   }
 }
 
@@ -153,6 +171,7 @@ onPageLoad(() => {
   align-items: center;
   padding: 100rpx 0;
   box-sizing: border-box;
+  color: #000;
 }
 </style>
 
@@ -162,8 +181,7 @@ onPageLoad(() => {
     "meta":{},
     "style":{
        "navigationStyle": "custom",
-       "pageOrientation": "auto",
-       "resizable": true
+       "pageOrientation": "auto"
     }
   }
 </route>
