@@ -51,13 +51,14 @@ function onBack() {
 
 function onNext() {
   showAnimate = false
+
   poetryService.random().then((data) => {
+    showAnimate = true
     poetry = data
     generateContent()
 
     scrollViewId = ''
     nextTick(() => {
-      showAnimate = true
       scrollViewId = `poetry-${data.id}`
     })
   })
