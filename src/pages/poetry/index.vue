@@ -10,7 +10,7 @@ let visible = $ref<boolean>(false)
 let poetry = $ref<Poetry>()
 let content = $ref<{ text: string, pinyin?: string, symbol: boolean }[][]>([])
 let scrollViewId = $ref<string>()
-let showAnimate = $ref(false)
+let showAnimate = $ref(true)
 
 function generateContent() {
   if (!poetry) {
@@ -69,7 +69,6 @@ function requestTodayPoetry() {
   poetryService.today().then((data) => {
     poetry = data
     generateContent()
-    showAnimate = true
     scrollViewId = ''
     nextTick(() => {
       scrollViewId = `poetry-${data.id}`
