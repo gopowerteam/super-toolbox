@@ -10,7 +10,6 @@ export default defineUniPages({
     backgroundTextStyle: '@bgTxtStyle',
     navigationBarBackgroundColor: '@navBgColor',
     navigationBarTextStyle: '@navTxtStyle',
-    // navigationBarTitleText: 'Uni Creator',
     navigationStyle: isH5 ? 'custom' : 'default',
   },
   subPackages: [],

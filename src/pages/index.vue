@@ -25,6 +25,11 @@ const appList = [{
   icon: 'icon-svg:time',
   backgroundColor: '#10aec2',
   url: '/pages/timer/index',
+}, {
+  title: '诗词',
+  icon: 'icon-svg:poetry',
+  backgroundColor: '#10aec2',
+  url: '/pages/poetry/index',
 }]
 </script>
 

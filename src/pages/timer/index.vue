@@ -21,8 +21,21 @@ const time = $computed(() => {
   }
 })
 
+function createMediaQueryObserver() {
+  const landscapeOb = uni.createMediaQueryObserver(getCurrentInstance())
+
+  landscapeOb.observe({
+    orientation: 'landscape', // 屏幕方向为横屏portrait
+  } as any, ({ matches }) => {
+    if (matches !== undefined) {
+      // console.log('横屏')
+    }
+  })
+}
+
 onPageLoad(() => {
   resume()
+  createMediaQueryObserver()
 })
 </script>
 
@@ -45,7 +58,8 @@ onPageLoad(() => {
     "layout": "default",
     "meta":{},
     "style":{
-       "navigationStyle": "custom"
+       "navigationStyle": "custom",
+       "pageOrientation": "auto"
     }
   }
 </route>

@@ -35,6 +35,17 @@
       "type": "page"
     },
     {
+      "path": "pages/poetry/index",
+      "type": "page",
+      "layout": "default",
+      "meta": {},
+      "style": {
+        "navigationStyle": "custom",
+        "pageOrientation": "auto",
+        "resizable": true
+      }
+    },
+    {
       "path": "pages/shulte/index",
       "type": "page",
       "layout": "default",
@@ -62,7 +73,8 @@
       "layout": "default",
       "meta": {},
       "style": {
-        "navigationStyle": "custom"
+        "navigationStyle": "custom",
+        "pageOrientation": "auto"
       }
     }
   ],

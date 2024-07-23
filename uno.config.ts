@@ -2,6 +2,7 @@ import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 import presetIcons from '@unocss/preset-icons'
 import { defineConfig } from 'unocss'
 import { presetUni } from '@uni-helper/unocss-preset-uni'
+// import presetChinese, { chineseTypography } from 'unocss-preset-chinese'
 
 function importSvgIcons() {
   return FileSystemIconLoader(
@@ -32,6 +33,10 @@ export default defineConfig({
         'vertical-align': 'middle',
       },
     }),
+    // chineseTypography(),
+    // presetChinese({
+    //   chineseType: 'simplified',
+    // }),
   ],
   shortcuts: [
     ['flex-center', 'flex justify-center items-center'],
