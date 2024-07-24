@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { pinyin } from 'pinyin-pro'
+import { RequestGenerateType } from '@gopowerteam/request'
 import { PoetryService } from '@/http/services/PoetryService'
 import type { Poetry } from '@/http/models/Poetry'
 
 const poetryService = new PoetryService()
 
 const router = useRouter()
+let audioContext: UniApp.InnerAudioContext
+
 let poetry = $ref<Poetry>()
 let content = $ref<{ text: string, pinyin?: string, symbol: boolean }[][]>([])
 let scrollViewId = $ref<string>()
@@ -49,6 +52,7 @@ function onTogglePinyin() {
   showMenu = false
   showPinyin = !showPinyin
 }
+
 function onBack() {
   showMenu = false
   router.back()
@@ -69,6 +73,21 @@ function onNext() {
   })
 
   showMenu = false
+}
+
+function onSpeak() {
+  showMenu = false
+  if (audioContext) {
+    audioContext.pause()
+  }
+
+  if (poetry) {
+    audioContext = uni.createInnerAudioContext()
+    audioContext.src = poetryService.speak(poetry.id, [], { type: RequestGenerateType.URL })
+    audioContext.onCanplay(() => {
+      audioContext.play()
+    })
+  }
 }
 
 function requestTodayPoetry() {
@@ -125,17 +144,25 @@ onPageLoad(() => {
       <ul class="nut-fixed-nav__list">
         <li class="nut-fixed-nav__list-item">
           <view class="text-center space-y-1" @click="onNext">
-            <view class="icon-park-outline:refresh text-#333 text-24rpx" />
+            <view class="icon-park-outline:refresh text-#333 text-24rpx h-40rpx" />
             <view class="text-24rpx text-#333">
               换一首
             </view>
           </view>
         </li>
         <li class="nut-fixed-nav__list-item">
+          <view class="text-center space-y-1" @click="onSpeak">
+            <view class="icon-park-outline:speaker-one text-#333 text-24rpx h-40rpx" />
+            <view class="text-24rpx text-#333">
+              朗诵
+            </view>
+          </view>
+        </li>
+        <li class="nut-fixed-nav__list-item">
           <view class="text-center space-y-1" @click="onTogglePinyin">
-            <text class="text-22rpx text-center italic" :class="showPinyin ? 'text-#333' : 'text-#999'">
+            <view class="text-22rpx text-center inline-block italic text-center h-40rpx" :class="showPinyin ? 'text-#333' : 'text-#999'">
               {{ showPinyin ? '开' : '关' }}<view />
-            </text>
+            </view>
             <view class="text-24rpx text-#333">
               拼音
             </view>
@@ -143,7 +170,7 @@ onPageLoad(() => {
         </li>
         <li class="nut-fixed-nav__list-item">
           <view class="text-center space-y-1" @click="onBack">
-            <view class="icon-park-outline:back text-#333 text-24rpx" />
+            <view class="icon-park-outline:back text-#333 text-24rpx h-40rpx" />
             <view class="text-24rpx text-#333">
               返回
             </view>

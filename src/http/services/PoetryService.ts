@@ -92,6 +92,78 @@ export class PoetryService {
   
   }
   
+  /**
+   * 根据ID查询
+   */
+  public findOne(
+    id: number,
+    requestPlugins: RequestPlugin[],
+    requestGenerateOptions: RequestGenerateOptions & { type: RequestGenerateType.URL }
+  ): string
+  public findOne(
+    id: number,
+    requestPlugins?: RequestPlugin[],
+    requestGenerateOptions?: RequestGenerateOptions
+  ): Promise<Poetry>
+  public findOne(
+    id: number,
+    requestPlugins: RequestPlugin[] = [],
+    requestGenerateOptions?: RequestGenerateOptions
+  ): Promise<Poetry> | string {
+    const requestSendOptions = {
+      service: this.service,
+      path: '/poetry/{id}',
+      method: 'get',
+      paramsPath: {
+        id,
+      },
+    }
+  
+    return this.generateRequest(
+      requestSendOptions,
+      requestPlugins,
+      requestGenerateOptions
+    )
+  
+  
+  }
+  
+  /**
+   * 根据ID生成语音
+   */
+  public speak(
+    id: number,
+    requestPlugins: RequestPlugin[],
+    requestGenerateOptions: RequestGenerateOptions & { type: RequestGenerateType.URL }
+  ): string
+  public speak(
+    id: number,
+    requestPlugins?: RequestPlugin[],
+    requestGenerateOptions?: RequestGenerateOptions
+  ): Promise<void>
+  public speak(
+    id: number,
+    requestPlugins: RequestPlugin[] = [],
+    requestGenerateOptions?: RequestGenerateOptions
+  ): Promise<void> | string {
+    const requestSendOptions = {
+      service: this.service,
+      path: '/poetry/speak/{id}',
+      method: 'get',
+      paramsPath: {
+        id,
+      },
+    }
+  
+    return this.generateRequest(
+      requestSendOptions,
+      requestPlugins,
+      requestGenerateOptions
+    )
+  
+  
+  }
+  
 }
 
 
