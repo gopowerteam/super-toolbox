@@ -10,71 +10,78 @@
       "path": "pages/calculation-export/index",
       "type": "page",
       "layout": "default",
+      "navigationBarTitleText": "计算试题",
       "meta": {}
     },
     {
       "path": "pages/calculation-export/questions",
-      "type": "page"
+      "type": "page",
+      "navigationBarTitleText": "计算试题",
+      "meta": {}
     },
     {
       "path": "pages/calculation-practise/index",
       "type": "page",
-      "layout": "default",
+      "navigationBarTitleText": "计算练习",
       "meta": {}
     },
     {
       "path": "pages/calculation-practise/questions",
-      "type": "page"
-    },
-    {
-      "path": "pages/page1/index",
-      "type": "page"
-    },
-    {
-      "path": "pages/page2/index",
-      "type": "page"
+      "type": "page",
+      "navigationBarTitleText": "计算练习",
+      "meta": {}
     },
     {
       "path": "pages/poetry/index",
       "type": "page",
-      "layout": "default",
-      "meta": {},
       "style": {
+        "navigationBarTitleText": "诗词",
         "navigationStyle": "custom",
         "pageOrientation": "auto"
-      }
+      },
+      "meta": {}
     },
     {
       "path": "pages/shulte/index",
       "type": "page",
-      "layout": "default",
+      "style": {
+        "navigationBarTitleText": "舒尔特方格"
+      },
       "meta": {}
     },
     {
       "path": "pages/shulte/questions",
       "type": "page",
-      "layout": "default",
+      "style": {
+        "navigationBarTitleText": "舒尔特方格"
+      },
       "meta": {}
     },
     {
       "path": "pages/snake/game",
-      "type": "page"
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "贪吃蛇"
+      },
+      "meta": {}
     },
     {
       "path": "pages/snake/index",
       "type": "page",
-      "layout": "default",
+      "style": {
+        "navigationBarTitleText": "贪吃蛇"
+      },
       "meta": {}
     },
     {
       "path": "pages/timer/index",
       "type": "page",
-      "layout": "default",
-      "meta": {},
       "style": {
+        "navigationBarTitleText": "时钟",
         "navigationStyle": "custom",
         "pageOrientation": "auto"
-      }
+      },
+      "meta": {}
     }
   ],
   "globalStyle": {
@@ -84,7 +91,7 @@
     "backgroundTextStyle": "@bgTxtStyle",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
-    "navigationStyle": "default"
+    "navigationStyle": "custom"
   },
   "subPackages": []
 }
