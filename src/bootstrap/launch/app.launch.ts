@@ -1,4 +1,5 @@
 function checkAppUpdate() {
+  // #ifdef MP-WEIXIN
   const updateManager = uni.getUpdateManager()
 
   updateManager.onUpdateReady(() => {
@@ -22,6 +23,7 @@ function checkAppUpdate() {
       })
     }
   })
+  // #endif
 }
 
 function setupAppShare() {
@@ -41,6 +43,8 @@ function setupAppShare() {
 }
 
 export function appLaunch() {
+  // #ifdef MP-WEIXIN
   checkAppUpdate()
   setupAppShare()
+  // #endif
 }
