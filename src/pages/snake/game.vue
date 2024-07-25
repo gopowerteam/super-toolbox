@@ -418,3 +418,12 @@ onPageLoad(() => {
   background-color: yellow!important;
 }
 </style>
+
+<route lang="json">
+  {
+    "style":{
+      "navigationBarTitleText": "贪吃蛇"
+    },
+    "meta":{}
+  }
+</route>

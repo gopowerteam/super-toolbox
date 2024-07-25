@@ -219,11 +219,11 @@ onPageLoad(() => {
 
 <route lang="json">
   {
-    "layout": "default",
-    "meta":{},
     "style":{
-       "navigationStyle": "custom",
-       "pageOrientation": "auto"
-    }
+      "navigationBarTitleText": "诗词",
+      "navigationStyle": "custom",
+      "pageOrientation": "auto"
+    },
+    "meta":{}
   }
 </route>

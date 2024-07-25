@@ -49,17 +49,13 @@ onPageLoad(() => {
   </view>
 </template>
 
-<style scoped>
-
-</style>
-
 <route lang="json">
   {
-    "layout": "default",
-    "meta":{},
     "style":{
-       "navigationStyle": "custom",
-       "pageOrientation": "auto"
-    }
+      "navigationBarTitleText": "时钟",
+      "navigationStyle": "custom",
+      "pageOrientation": "auto"
+    },
+    "meta":{}
   }
 </route>

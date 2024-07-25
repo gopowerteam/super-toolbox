@@ -107,6 +107,8 @@ function onSubmit() {
 <route lang="json">
   {
     "layout": "default",
+    "navigationBarTitleText": "计算试题",
     "meta":{ }
+
   }
 </route>

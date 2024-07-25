@@ -61,7 +61,9 @@ function onSubmit() {
 
 <route lang="json">
   {
-    "layout": "default",
-    "meta":{ }
+    "style":{
+      "navigationBarTitleText": "贪吃蛇"
+    },
+    "meta":{}
   }
 </route>

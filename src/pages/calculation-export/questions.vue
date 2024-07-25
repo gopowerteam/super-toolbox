@@ -332,3 +332,11 @@ onPageLoad(() => {
 
 <style scoped lang="scss">
 </style>
+
+<route lang="json">
+  {
+    "navigationBarTitleText": "计算试题",
+    "meta":{ }
+
+  }
+</route>

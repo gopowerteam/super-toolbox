@@ -143,7 +143,7 @@ function onSubmit() {
 
 <route lang="json">
   {
-    "layout": "default",
+    "navigationBarTitleText": "计算练习",
     "meta":{ }
   }
 </route>

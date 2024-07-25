@@ -82,7 +82,9 @@ function onSubmit() {
 
 <route lang="json">
   {
-    "layout": "default",
-    "meta":{ }
+    "style":{
+      "navigationBarTitleText": "舒尔特方格"
+    },
+    "meta":{}
   }
 </route>

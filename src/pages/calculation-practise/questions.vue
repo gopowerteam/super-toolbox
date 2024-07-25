@@ -522,3 +522,10 @@ onPageLoad(() => {
   }
 }
 </style>
+
+<route lang="json">
+  {
+    "navigationBarTitleText": "计算练习",
+    "meta":{ }
+  }
+</route>
