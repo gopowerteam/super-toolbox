@@ -324,9 +324,9 @@ onPageLoad(() => {
 </script>
 
 <template>
-  <PageContainer append-class="text-#333">
-    <view v-if="currentRecord && !result">
-      <view class="flex-center h-300rpx">
+  <PageContainer append-class="text-#333 ">
+    <view v-if="currentRecord && !result" class="flex flex-col absolute inset-0 bg-red">
+      <view class="flex-center pt-50rpx">
         <view class="timer-wrapper" :style="{ background: `conic-gradient(green ${(millisecondsCurrent / (options.time * 1000) * 100).toFixed()}%, #fff 0%)` }">
           <view class="timer">
             <text v-if="!currentRecord.time">
@@ -343,40 +343,42 @@ onPageLoad(() => {
           </view>
         </view>
       </view>
-      <view>
-        <view v-for="record, recordIndex in records" :key="recordIndex">
-          <nut-transition :show="recordIndex === currentIndex" name="fade-right" :duration="200">
-            <view v-if="recordIndex === currentIndex">
-              <view class="question">
-                {{ record.question.text }}
-              </view>
-              <view v-if="options.mode === CalculationMode.Select" class="options">
-                <view
-                  v-for="item, optionIndex in record.question.options" :key="optionIndex"
-                  :class="{
-                    right: showAnswer && record.question.answer === item,
-                    wrong: showAnswer && record.answer === item && record.answer !== record.question.answer }"
-                  class="option-item" @click="() => onSelect(item)"
-                >
-                  <text>{{ item }}</text>
-                  <view v-if="record.question.answer === item && record.answer === item" class="right-icon icon hidden">
-                    <i class="icon-park-outline:check" />
+      <view class="flex-auto">
+        <view>
+          <view v-for="record, recordIndex in records" :key="recordIndex">
+            <nut-transition :show="recordIndex === currentIndex" name="fade-right" :duration="200">
+              <view v-if="recordIndex === currentIndex">
+                <view class="question">
+                  {{ record.question.text }}
+                </view>
+                <view v-if="options.mode === CalculationMode.Select" class="options">
+                  <view
+                    v-for="item, optionIndex in record.question.options" :key="optionIndex"
+                    :class="{
+                      right: showAnswer && record.question.answer === item,
+                      wrong: showAnswer && record.answer === item && record.answer !== record.question.answer }"
+                    class="option-item" @click="() => onSelect(item)"
+                  >
+                    <text>{{ item }}</text>
+                    <view v-if="record.question.answer === item && record.answer === item" class="right-icon icon hidden">
+                      <i class="icon-park-outline:check" />
+                    </view>
+                    <view class="wrong-icon icon hidden ">
+                      <i class="icon-park-outline:close" />
+                    </view>
                   </view>
-                  <view class="wrong-icon icon hidden ">
-                    <i class="icon-park-outline:close" />
+                </view>
+                <view v-if="options.mode === CalculationMode.Input">
+                  <view class="input-box">
+                    {{ inputNumber }}
                   </view>
                 </view>
               </view>
-              <view v-if="options.mode === CalculationMode.Input">
-                <view class="input-box">
-                  {{ inputNumber }}
-                </view>
-              </view>
-            </view>
-          </nut-transition>
+            </nut-transition>
+          </view>
         </view>
       </view>
-      <view v-if="options.mode === CalculationMode.Input" class="keyboard relative h-500rpx my-5 mx-2">
+      <view v-if="options.mode === CalculationMode.Input" class="keyboard relative flex-center my-2 mx-2 overflow-hidden">
         <NutNumberKeyboard
           :custom-key="['重置']"
           confirm-text="提交"
@@ -386,7 +388,7 @@ onPageLoad(() => {
           @delete="onKeyboardDelete" @confirm="onKeyboardConfirm"
         />
       </view>
-      <view class="index py-40rpx px-40rpx text-#999 text-center fixed bottom-0 left-0 right-0 flex justify-between">
+      <view class="index py-20rpx px-20rpx text-#999 text-center flex justify-between">
         <view>
           {{ currentIndex + 1 }} / {{ options.count }}
         </view>
@@ -430,7 +432,7 @@ onPageLoad(() => {
 .input-box{
   margin:auto;
   width: 200rpx;
-  height: 100rpx;
+  // height: 100rpx;
   text-align: center;
   border: solid 1px transparent;
   border-bottom-color: #333;
@@ -443,10 +445,11 @@ onPageLoad(() => {
 }
 
 .keyboard:deep(.nut-popup){
-  position: absolute!important;
+  position: relative!important;
   background-color: transparent!important;
   .nut-number-keyboard{
     background-color: transparent!important;
+    padding-bottom: 0;
   }
   .nut-number-keyboard__keys{
     .nut-key__wrapper:last-child{
@@ -483,7 +486,7 @@ onPageLoad(() => {
   display: flex;
   font-size: 90rpx;
   padding: 40rpx;
-  height: 200rpx;
+  // height: 200rpx;
   justify-content: center;
   align-items: center;
 }
@@ -525,7 +528,13 @@ onPageLoad(() => {
 
 <route lang="json">
   {
+    "style":{
+      "pageOrientation": "portrait",
+      "disableScroll": true
+    },
     "navigationBarTitleText": "计算练习",
-    "meta":{ }
+    "meta":{
+
+     }
   }
 </route>

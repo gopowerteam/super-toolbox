@@ -28,6 +28,10 @@
     {
       "path": "pages/calculation-practise/questions",
       "type": "page",
+      "style": {
+        "pageOrientation": "portrait",
+        "disableScroll": true
+      },
       "navigationBarTitleText": "计算练习",
       "meta": {}
     },
@@ -91,7 +95,7 @@
     "backgroundTextStyle": "@bgTxtStyle",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
-    "navigationStyle": "custom"
+    "navigationStyle": "default"
   },
   "subPackages": []
 }
