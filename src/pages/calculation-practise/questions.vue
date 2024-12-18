@@ -325,7 +325,7 @@ onPageLoad(() => {
 
 <template>
   <PageContainer append-class="text-#333 ">
-    <view v-if="currentRecord && !result" class="flex flex-col absolute inset-0 bg-red">
+    <view v-if="currentRecord && !result" class="flex flex-col absolute inset-0">
       <view class="flex-center pt-50rpx">
         <view class="timer-wrapper" :style="{ background: `conic-gradient(green ${(millisecondsCurrent / (options.time * 1000) * 100).toFixed()}%, #fff 0%)` }">
           <view class="timer">
