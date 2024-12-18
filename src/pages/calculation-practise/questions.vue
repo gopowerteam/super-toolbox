@@ -162,9 +162,17 @@ function generateMinusQuestion(range: number): Question {
 }
 
 function generateMultiplyQuestion(range: number): Question {
-  const numberA = Math.floor(random(0, range))
-  const numberB = Math.floor(random(0, range))
-  const answer = numberA * numberB
+  let numberA
+  let numberB
+  let answer
+
+  do {
+    numberA = Math.floor(random(0, Math.floor(range)))
+    numberB = Math.floor(random(0, Math.floor(range)))
+    answer = numberA * numberB
+  } while (
+    answer > range
+  )
 
   return {
     numberA,

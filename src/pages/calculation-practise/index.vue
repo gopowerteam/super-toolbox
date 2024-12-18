@@ -5,7 +5,7 @@ import { CalculationMode, CalculationRange, CalculationType } from '@/config/enu
 import { CalculationModeDict, CalculationRangeDict, CalculationTypeDict } from '@/config/dict.config'
 
 const router = useRouter()
-const calculationCounts = [10, 20, 40, 60]
+const calculationCounts = [10, 20, 40, 60, 80, 100]
 const calculationTimes = [3, 5, 10, 15, 20, 30]
 
 const calculationOptions = $ref<CalculationOptions>({
@@ -74,7 +74,7 @@ function onSubmit() {
         <view class="title">
           题目数量
         </view>
-        <view class="grid grid-cols-4">
+        <view class="grid grid-cols-3">
           <view v-for="item in calculationCounts" :key="item" @click="() => onSelectCount(item)">
             <view class="count-item" :class="{ active: calculationOptions.count === item }">
               {{ item }}

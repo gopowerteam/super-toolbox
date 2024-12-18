@@ -95,7 +95,7 @@
     "backgroundTextStyle": "@bgTxtStyle",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
-    "navigationStyle": "default"
+    "navigationStyle": "custom"
   },
   "subPackages": []
 }
