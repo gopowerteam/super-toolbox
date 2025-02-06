@@ -30,6 +30,11 @@ const appList = [{
   icon: 'icon-svg:poetry',
   backgroundColor: '#10aec2',
   url: '/pages/poetry/index',
+}, {
+  title: '记忆翻牌',
+  icon: 'icon-svg:memory-card',
+  backgroundColor: '#10aec2',
+  url: '/pages/memory-card/index',
 }]
 </script>
 

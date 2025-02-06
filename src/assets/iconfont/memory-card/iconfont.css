@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "memory-card";
+  src: url('iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "memory-card" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-circle:before {
+  content: "\e001";
+}
+
+.icon-square:before {
+  content: "\e002";
+}
+
+.icon-triangle:before {
+  content: "\e003";
+}
+
+.icon-pentagon:before {
+  content: "\e004";
+}
+
+.icon-hexagon:before {
+  content: "\e005";
+}
+
+.icon-octagon:before {
+  content: "\e006";
+}
+
+.icon-star:before {
+  content: "\e007";
+}
+
+.icon-double-star:before {
+  content: "\e008";
+}
+
+.icon-diamond:before {
+  content: "\e009";
+}
+
+.icon-flower:before {
+  content: "\e00a";
+}
+
+.icon-moon:before {
+  content: "\e00b";
+}
+
+.icon-sun:before {
+  content: "\e00c";
+}
+
+.icon-cloud:before {
+  content: "\e00d";
+}
+
+.icon-cross:before {
+  content: "\e00e";
+}
+
+.icon-plus:before {
+  content: "\e00f";
+}
+
+.icon-infinity:before {
+  content: "\e010";
+}
+
+.icon-heart:before {
+  content: "\e011";
+}
+
+.icon-smile:before {
+  content: "\e012";
+}
+
+.icon-lightning:before {
+  content: "\e013";
+}
+
+.icon-spiral:before {
+  content: "\e014";
+}
+
+.icon-wave:before {
+  content: "\e015";
+}
+
+.icon-power:before {
+  content: "\e016";
+}
+
+.icon-target:before {
+  content: "\e017";
+} 

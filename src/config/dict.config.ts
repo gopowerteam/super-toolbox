@@ -1,4 +1,4 @@
-import { CalculationMode, CalculationRange, CalculationType, ShulteMode } from './enum.config'
+import { CalculationMode, CalculationRange, CalculationType, MemoryCardMode, ShulteMode } from './enum.config'
 
 export const CalculationTypeDict = new Map([
   [CalculationType.Add, '加法'],
@@ -22,4 +22,9 @@ export const ShulteModeDict = new Map([
   [ShulteMode.Positive, '正序'],
   [ShulteMode.Reverse, '倒序'],
   [ShulteMode.Random, '随机'],
+])
+
+export const MemoryCardModeDict = new Map([
+  [MemoryCardMode.Number, '数字模式'],
+  [MemoryCardMode.Image, '图片模式'],
 ])

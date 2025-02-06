@@ -28,3 +28,8 @@ export enum Direction {
   Left = 'left',
   Right = 'right',
 }
+
+export enum MemoryCardMode {
+  Number = 'Number',
+  Image = 'Image',
+}

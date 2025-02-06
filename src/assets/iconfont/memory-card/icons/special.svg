@@ -1,0 +1,25 @@
+<!-- 特殊图形 -->
+<!-- 星形 -->
+<svg width="24" height="24" viewBox="0 0 24 24">
+  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+</svg>
+
+<!-- 双星 -->
+<svg width="24" height="24" viewBox="0 0 24 24">
+  <path d="M12 2L14 7L19 7L15 10L16 15L12 12L8 15L9 10L5 7L10 7L12 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+  <path d="M12 8L13.5 12L17 12L14 14L15 18L12 16L9 18L10 14L7 12L10.5 12L12 8Z" stroke="currentColor" stroke-width="2" fill="none"/>
+</svg>
+
+<!-- 菱形 -->
+<svg width="24" height="24" viewBox="0 0 24 24">
+  <path d="M12 2L22 12L12 22L2 12L12 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+</svg>
+
+<!-- 花朵 -->
+<svg width="24" height="24" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+  <path d="M12 2C14 2 14 6 12 8C10 6 10 2 12 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+  <path d="M12 22C14 22 14 18 12 16C10 18 10 22 12 22Z" stroke="currentColor" stroke-width="2" fill="none"/>
+  <path d="M2 12C2 14 6 14 8 12C6 10 2 10 2 12Z" stroke="currentColor" stroke-width="2" fill="none"/>
+  <path d="M22 12C22 14 18 14 16 12C18 10 22 10 22 12Z" stroke="currentColor" stroke-width="2" fill="none"/>
+</svg> 

@@ -36,6 +36,22 @@
       "meta": {}
     },
     {
+      "path": "pages/memory-card/game",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "记忆翻牌"
+      },
+      "meta": {}
+    },
+    {
+      "path": "pages/memory-card/index",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "记忆翻牌"
+      },
+      "meta": {}
+    },
+    {
       "path": "pages/poetry/index",
       "type": "page",
       "style": {
@@ -95,7 +111,10 @@
     "backgroundTextStyle": "@bgTxtStyle",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
-    "navigationStyle": "custom"
+    "navigationStyle": "custom",
+    "app-plus": {
+      "fontSrc": "/static/iconfont/memory-card/iconfont.ttf"
+    }
   },
   "subPackages": []
 }
