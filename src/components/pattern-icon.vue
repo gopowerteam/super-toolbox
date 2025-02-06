@@ -4,10 +4,19 @@ import { patterns } from '@/config/pattern.config'
 
 const props = defineProps<{
   value: number
+  count?: number
 }>()
 
 const pattern = computed(() => {
   return patterns[(props.value - 1) % patterns.length]
+})
+
+// 根据卡片数量计算图标尺寸
+const size = computed(() => {
+  const baseSize = 64
+  const count = props.count || 16
+  const scale = 1 - count / 8 / 10 // 每增加8张卡片，尺寸减小10%
+  return `${baseSize * scale}rpx`
 })
 </script>
 
@@ -17,6 +26,10 @@ const pattern = computed(() => {
       class="pattern-image"
       :src="pattern"
       mode="aspectFit"
+      :style="{
+        width: size,
+        height: size,
+      }"
     />
   </view>
 </template>
@@ -31,8 +44,6 @@ const pattern = computed(() => {
 }
 
 .pattern-image {
-  font-size: calc(64rpx - var(--card-count, 16) / 8 * 1rpx);
-  width: 70%;
-  height: 70%;
+  display: block;
 }
 </style>

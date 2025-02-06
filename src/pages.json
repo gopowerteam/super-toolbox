@@ -111,10 +111,7 @@
     "backgroundTextStyle": "@bgTxtStyle",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
-    "navigationStyle": "custom",
-    "app-plus": {
-      "fontSrc": "/static/iconfont/memory-card/iconfont.ttf"
-    }
+    "navigationStyle": "default"
   },
   "subPackages": []
 }

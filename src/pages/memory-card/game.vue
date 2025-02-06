@@ -26,7 +26,10 @@ const router = useRouter()
 let options = $ref<{
   count: number
   mode: MemoryCardMode
-}>()
+}>({
+  count: 16,
+  mode: MemoryCardMode.Number,
+})
 
 let cards = $ref<Card[]>([])
 let flippedCards = $ref<Card[]>([])
@@ -155,7 +158,10 @@ onPageLoad(() => {
                 {{ card.value }}
               </template>
               <template v-else>
-                <PatternIcon :value="card.value" />
+                <PatternIcon
+                  :value="card.value"
+                  :count="options.count"
+                />
               </template>
             </view>
           </view>
